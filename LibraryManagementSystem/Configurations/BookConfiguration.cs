@@ -29,5 +29,8 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
         builder.Property(b => b.Price)
         .IsRequired()
         .HasPrecision(5,2);
+
+        builder.Property(b => b.PublishedYear)
+        .IsRequired();
     }
 }

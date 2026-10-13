@@ -9,5 +9,16 @@ public class MemberConfiguration : IEntityTypeConfiguration<Member>
 
         builder.HasIndex(m => m.Email)
         .IsUnique();
+
+        builder.Property(m => m.FullName)
+        .IsRequired()
+        .HasMaxLength(50);
+
+        builder.Property(m => m.PhoneNumber)
+        .IsRequired()
+        .HasMaxLength(15);
+
+        builder.Property(m => m.RegistrationDate)
+        .IsRequired();
     }
 }

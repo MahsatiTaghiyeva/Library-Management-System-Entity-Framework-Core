@@ -19,5 +19,12 @@ public class BorrowingConfiguration : IEntityTypeConfiguration<Borrowing>
         .IsRequired()
         .OnDelete(DeleteBehavior.Cascade);
 
+        builder.Property(b => b.BorrowDate)
+        .IsRequired();
+        builder.Property(b => b.DueDate)
+        .IsRequired();
+        builder.Property(b => b.ReturnDate)
+        .IsRequired();
+        
     }
 }
